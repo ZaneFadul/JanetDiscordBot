@@ -10,7 +10,9 @@ Janet Bot
 import os
 
 import discord
+from discord.ext import commands
 from dotenv import load_dotenv
+
 
 def connect():  
     load_dotenv()   
@@ -25,6 +27,19 @@ def connect():
         
     client.run(TOKEN)
 
+def event_listeners():
+    bot = commands.Bot(command_prefix = '!')
+
+    #Join Voice Channel
+    @bot.command(pass_context=True)
+    async def join(ctx):
+        if ctx.message.author.voice:
+            channel = ctx.message.autor.voice.channel
+            await channel.connect()
+            await ctx.send('Okay, joining you in the voice channel!')
+
+
 if __name__ == '__main__':
+    event_listeners()
     connect()
     
