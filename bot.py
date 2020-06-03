@@ -36,7 +36,8 @@ async def on_ready():
 async def on_message(message):
     if message.author == CLIENT.user:
         return
-    manager.analyze(message)
+    
+    await manager.analyze(message)
     
 @CLIENT.command(pass_context=True)
 async def join(ctx):
