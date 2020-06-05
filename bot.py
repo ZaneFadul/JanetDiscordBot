@@ -21,7 +21,7 @@ except Exception as inst:
             
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
-CLIENT = commands.Bot(command_prefix = '!')
+CLIENT = commands.Bot(command_prefix = 'Janet, ')
 manager = MessageManager()
 
 def connect():  

@@ -26,7 +26,7 @@ class MessageManager:
                 func = self.features[feature][0]
                 response = self.features[feature][1]
 
-                await func(message,response) #execute function
+                await func(message, response) #execute function
 
     async def respond(self, message, response):
         await message.channel.send(response)
