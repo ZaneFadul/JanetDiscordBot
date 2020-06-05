@@ -8,7 +8,7 @@ Message Manager
 """
 import discord
 from discord.ext import commands
-CLIENT = commands.Bot(command_prefix = '!')
+from bot import CLIENT
 
 class MessageManager:
     def __init__(self):
