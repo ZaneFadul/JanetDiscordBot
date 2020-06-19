@@ -12,7 +12,7 @@ import discord
 #import random
 from discord.ext import commands
 from dotenv import load_dotenv
-from messagemanager import MessageManager
+import messagemanager as mm
 
 try:
     load_dotenv()
@@ -22,7 +22,7 @@ except Exception as inst:
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
 CLIENT = commands.Bot(command_prefix = 'Janet, ')
-manager = MessageManager()
+manager = mm.MessageManager()
 
 def connect():  
     CLIENT.run(TOKEN)
